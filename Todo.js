@@ -28,7 +28,7 @@ class Todo extends Component {
         name: 'Mike',
         done: false,
         date: new Date()
-      }],
+      }]
     }
   }
 
@@ -46,27 +46,7 @@ class Todo extends Component {
 
     event.target.item.value = '';
   }
-  onSubmitSearchHandle(event)
-  {
-    event.preventDefault();
-    let name = event.target.search.value;
 
-    if(name!=="")
-    {
-      this.setState({
-        mockData: this.state.mockData.filter(item => {
-          if (item.name === name) {
-            return item;
-          }
-        })
-      });
-    }
-    else
-    {
-            return this.state.mockData;
-    }
-
-  }
   onDeleteHandle() {
     let id = arguments[0];
 
@@ -129,10 +109,7 @@ class Todo extends Component {
       </form>
     }
   }
-  ViewList()
-  {
-    window.location.reload(false);
-  }
+
   render() {
     return (
       <div>
@@ -141,12 +118,6 @@ class Todo extends Component {
           <input type="text" name="item" className="item" />
           <button className="btn-add-item button add">Add</button>
         </form>
-        <form onSubmit={this.onSubmitSearchHandle.bind(this)}>
-          <input type="text" name="search" className="search" />
-          <button className="btn-add-item button add">Search</button>
-        </form>
-        <button className="btn-add-item button add" onClick={this.ViewList.bind()}>ViewList</button>
-
         <table>
           <thead>
           {/* <th>Id</th> */}
